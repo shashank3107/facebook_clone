@@ -16,7 +16,13 @@ class _ProfilePageViewState extends State<ProfilePageView> {
     screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: Colors.blueGrey,
-      body: ListView(children: [profileHeader()]),
+      body: ListView(children: [
+        profileHeader(),
+        SizedBox(
+          height: 10,
+        ),
+        detailsBox()
+      ]),
     );
   }
 
@@ -82,6 +88,40 @@ class _ProfilePageViewState extends State<ProfilePageView> {
           ),
         ),
       ],
+    );
+  }
+
+  Widget detailsBox() {
+    return Container(
+      height: 300,
+      color: Colors.white,
+      child: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              "Details",
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+            ),
+            SizedBox(
+              height: 5,
+            ),
+            Text(
+                "Studied at Ramkrishna Mahato Government Engineering College, Purulia"),
+            SizedBox(
+              height: 5,
+            ),
+            Text(
+                "Studied at Ramkrishna Mahato Government Engineering College, Purulia"),
+            SizedBox(
+              height: 5,
+            ),
+            Text(
+                "Studied at Ramkrishna Mahato Government Engineering College, Purulia")
+          ],
+        ),
+      ),
     );
   }
 
